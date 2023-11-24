@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+body {
+  background-image: linear-gradient(to bottom right, rgb(97, 248, 97), rgb(64, 64, 233));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Merriweather Sans", sans-serif;
+  cursor: default;
+}
+
+.day-time {
+  background-color: #c9c5c5;
+  color: black;
+}
+.day-time .location-container > img {
+  filter: invert(0%);
+}
+
+.night-time {
+  background-color: #585858;
+  color: white;
+}
+.night-time .location-container > img {
+  filter: invert(100%);
+}
+
+.container {
+  width: 400px;
+  height: 620px;
+  box-shadow: 0px 0px 15px 0px black;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  transition: background-color 1s ease 0s;
+}
+.container .search-container {
+  width: 350px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container .search-container .error {
+  display: none;
+  position: absolute;
+  top: 0%;
+  margin-top: 15px;
+  color: red;
+  font-size: 20px;
+  font-weight: 800;
+}
+.container .search-container .shake {
+  display: block;
+  animation: shake 0.6s linear;
+}
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-8px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(8px);
+  }
+}
+.container .search-container > .search {
+  width: 95%;
+  height: 35%;
+  font-size: 25px;
+  border-radius: 25px;
+  padding: 15px;
+  padding-right: 40px;
+}
+.container .search-container img {
+  position: absolute;
+  right: 20px;
+}
+.container .search-container ::-moz-placeholder {
+  opacity: 0.7;
+}
+.container .search-container ::placeholder {
+  opacity: 0.7;
+}
+.container .show-weather-container {
+  width: 350px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: opacity 0.7s ease 0s;
+  opacity: 0;
+}
+.container .show-weather-container .image-weather {
+  flex: 0 1 90%;
+}
+.container .show-weather-container .image-weather img {
+  width: 140px;
+}
+.container .show-weather-container .text-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 60%;
+}
+.container .show-weather-container .text-weather .weather-degrees {
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+}
+.container .show-weather-container .text-weather .weather-description {
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+.container .show-date-location {
+  width: 350px;
+  height: 150px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.7s ease 0s;
+  opacity: 1;
+}
+.container .show-date-location .day-of-the-week {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 35px;
+}
+.container .show-date-location .date {
+  margin-bottom: 20px;
+}
+.container .show-date-location .location-container {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+.container .side-panel {
+  width: 370px;
+  height: 400px;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 15px 15px 15px 15px;
+  z-index: -1;
+  background-image: linear-gradient(to bottom right, gray, rgb(114, 114, 172));
+  transition: transform 1s ease 0s, box-shadow 0.6s ease 0s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(0%);
+}
+.container .side-panel .forecast-container {
+  width: 95%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: white;
+}
+.container .side-panel .forecast-container .five-day-forecast {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+}
+.container .side-panel .forecast-container .additional-weather {
+  margin: 0 10px;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.container .side-panel .forecast-container .additional-weather .additional-weather__element {
+  display: flex;
+  justify-content: space-between;
+}
+.container .side-panel .forecast-container .additional-weather .additional-weather__element .additional-weather__name {
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+.container .side-panel .forecast-container .additional-weather .additional-weather__element .additional-weather__name img {
+  margin-right: 5px;
+  filter: invert(100%);
+}
+.container .side-panel .forecast-container .additional-weather .additional-weather__element p {
+  font-size: 20px;
+}
+.container .side-panel .forecast-container .forecast-days {
+  margin: 0 10px;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 0px black;
+}
+.container .side-panel .forecast-container .forecast-days .day {
+  height: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 0 1 20%;
+  transition: background-color 1s ease, color 0.6s ease;
+}
+.container .side-panel .forecast-container .forecast-days .day img {
+  width: 60px;
+}
+.container .side-panel .forecast-container .forecast-days .day .short-day-of-the-week {
+  font-size: 20px;
+}
+.container .side-panel .forecast-container .forecast-days .day .short-degrees {
+  font-size: 18px;
+}
+.container .side-panel .forecast-container .forecast-days .day:hover {
+  background-color: rgb(207, 205, 205);
+  color: black;
+}
+.container .side-panel .forecast-container .forecast-days .day.selected {
+  background-color: white;
+  color: black;
+}
+.container .to-left {
+  transform: translateX(-120%);
+  box-shadow: 0px 0px 10px 0px black;
+}

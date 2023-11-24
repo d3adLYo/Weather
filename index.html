@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Site</title>
+    <link rel="icon" type="image/x-icon" href="img/Weather-Icon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="container day-time">
+        <div class="search-container">
+            <p class="error">Something went wrong</p>
+            <input type="text" placeholder="Enter city/country" class="search">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOlJREFUSEvVlQsKwjAQRKcnU0+mnkw9mTLQgWmaza6QggZKSpPs21+mCw4ey8H2MQKcAZwAcObDcVvne9WxCHA1Y5EtwlJQD/BoPH4BeK4Ugj0Svg/T3C4yFQTQIL2T4V4Ub4OFkThAxnnukhgXUJAwCl9Q3uk1AZWhdIb1cIA2V70vReGANNwgpOG5nwd413XrNqvIYWO07fVNHbytS23KGlbvgu8bSkZFKgimXGhQACV6+laOQAeqYuegLiT7H0jcJNd0QDrVXrSu8GWAilxwj5pjB5kFcMim6DMBhDClG+meDdil9P8BHwWTNBmi2njDAAAAAElFTkSuQmCC" class="search-img"/>
+        </div>
+
+        <div class="show-weather-container">
+            <div class="image-weather"></div>
+            <div class="text-weather">
+                <p class="weather-degrees"></p>
+                <p class="weather-description"></p>
+            </div>
+        </div>
+        
+        <div class="show-date-location">
+            <p class="day-of-the-week"></p>
+            <p class="date"></p>
+            <div class="location-container">
+                <img src="img/location.png" alt="!">
+                <p class="location">
+                    City, Country
+                </p>
+            </div>
+        </div>
+
+        <div class="side-panel">
+            <div class="forecast-container">
+                <p class="five-day-forecast">
+                    5-Day Forecast
+                </p>
+                <div class="additional-weather">
+                    <div class="additional-weather__element">
+                        <div class="additional-weather__name">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAIRJREFUSEtjZKAxYKSx+QyjFhAMYeQg+s/AwNDAwMDQiKarHioOEiZZHt0CmNmOUAbIcAcsziRG/gBIH3okg3yBDkAKYQaSIg82G1sqQnY1yHBsQQbzFT55sKPomkxHIxkU5MiJYDSS4dkFb04fzcmDKycTLNvJUUDXsogcBxLUQ3MfAABRejwZLQdBSQAAAABJRU5ErkJggg=="/>
+                            <p>HUMIDITY</p>
+                        </div>
+                        <p></p>
+                    </div>
+                    <div class="additional-weather__element">
+                        <div class="additional-weather__name">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOhJREFUSEu9lVESgjAMRJeTqSdTT6Y301mH7aSxNKkW8gMDZV+yoemCnWPZWR8R4AzgCoBXxg3AfSSpHoCij4ZYlFT1SW8xxQlR1qyE94w0JL1wFX45QGhhFkCh01rBE8Blra5lYVWhBSi7qIcUJ0QW8p6Nt88KZARghSighARUYpWNWYuiqvTe/nkf7ZkA23D1qQJkexBVU8R9Bf8CKMxgT0rMtKhZ2aEAb5HgGes2h2BvH4wANv/IGRZ1h+AMgN3VX3q/ANQTjQ4/BNPnQW9DtRrvZ9LYweFoOkY5HvwQnFJBNC6O28lvPJ8vGZZ+V0IAAAAASUVORK5CYII="/>
+                            <p>WIND</p>
+                        </div>   
+                        <p></p>
+                    </div>
+                </div>
+                <div class="forecast-days">
+                    <div class="day">
+                        <img src="." alt="icon">
+                        <p class="short-day-of-the-week"></p>
+                        <p class="short-degrees"></p>
+                    </div>
+                    <div class="day">
+                        <img src="." alt="icon">
+                        <p class="short-day-of-the-week"></p>
+                        <p class="short-degrees"></p>
+                    </div>
+                    <div class="day">
+                        <img src="." alt="icon">
+                        <p class="short-day-of-the-week"></p>
+                        <p class="short-degrees"></p>
+                    </div>
+                    <div class="day">
+                        <img src="." alt="icon">
+                        <p class="short-day-of-the-week"></p>
+                        <p class="short-degrees"></p>
+                    </div>
+                    <div class="day">
+                        <img src="." alt="icon">
+                        <p class="short-day-of-the-week"></p>
+                        <p class="short-degrees"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
